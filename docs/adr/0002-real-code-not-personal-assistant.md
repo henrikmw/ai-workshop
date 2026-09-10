@@ -3,7 +3,7 @@
 **Status:** Vedtatt · **Dato:** 2026-06-28
 
 ## Kontekst
-Forrige workshop var en personlig-assistent-vinkel ([navn]OS, møtenotater, Oda-handling). Målgruppen nå er utvikler-sommerstudenter som skal ta med triks inn i arbeidshverdagen.
+Forrige workshop var en personlig-assistent-vinkel ([navn]OS, møtenotater, Oda-handling). Målgruppen nå er UiT-studentene, som skal ta med triks inn i arbeidshverdagen.
 
 ## Beslutning
 Alle oppgaver retter seg mot **ekte kode og utvikler-arbeidsflyt** (utforske repo, doc-kommentar i prosjektets stil, kodestil-skill, MCP mot dev-verktøy). Ingen personlig-assistent-caser.

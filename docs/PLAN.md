@@ -1,4 +1,4 @@
-# Plan: AI-utviklerverktøy-workshop for sommerstudenter
+# Plan: AI-utviklerverktøy-workshop for UiT-studentene
 
 **Varighet:** 2 timer · **Verktøy:** Claude Code (alle har det installert) · **Format:** hands-on, alle bygger den samme værmeldingstjenesten **Bekkværet** · **Forkunnskap:** teori dekkes i presentasjon før workshop, så siden er handlingsorientert med lite forklarende tekst.
 
