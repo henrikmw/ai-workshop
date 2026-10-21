@@ -485,32 +485,6 @@
       font-size: 14px
     }
 
-    /* harness-velger */
-    .harness-group {
-      margin-left: auto
-    }
-
-    .harness-sel {
-      appearance: none;
-      -webkit-appearance: none;
-      font: inherit;
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--ink);
-      background-color: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 34px 8px 14px;
-      cursor: pointer;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235b6472' stroke-width='2.5'><path d='M6 9l6 6 6-6'/></svg>");
-      background-repeat: no-repeat;
-      background-position: right 12px center
-    }
-
-    .harness-sel:hover {
-      background-color: var(--panel-2)
-    }
-
     @media (max-width: 780px) {
       .ctl-row {
         gap: 14px
@@ -519,10 +493,6 @@
       .ctl-group {
         min-width: 0;
         max-width: 100%
-      }
-
-      .harness-group {
-        margin-left: 0
       }
 
       .seg.levels {
@@ -543,26 +513,15 @@
       }
     }
 
-    /* harness-spesifikt innhold (vises kun for valgt harness) */
-    .ho {
-      display: none
-    }
-
-    body[data-harness="claude"] .ho.claude,
-    body[data-harness="copilot"] .ho.copilot,
-    body[data-harness="gemini"] .ho.gemini,
-    body[data-harness="codex"] .ho.codex {
-      display: revert
-    }
   </style>
 </head>
 
-<body data-harness="claude">
+<body>
 
   <header class="hero">
     <div class="wrap">
-      <span class="kicker">For UiT-studentene</span>
-      <h1>En workshop om agentisk utvikling</h1>
+      <span class="kicker">For NTNU-studentene</span>
+      <h1>En workshop om agentisk utvikling i Claude</h1>
       <p class="lede">I denne workshoppen lager vi værmeldingstjenesten <b>Bekkværet</b> på agentisk vis.</p>
     </div>
   </header>
@@ -579,14 +538,6 @@
             <button data-l="3">3 · MCP</button>
             <button data-l="4">4 · Avansert bruk</button>
           </div>
-        </div>
-        <div class="ctl-group harness-group">
-          <span class="ctl-label">AI-harness</span>
-          <select id="harnessSel" class="harness-sel" aria-label="Velg AI-harness">
-            <option value="claude">Claude Code</option>
-            <option value="copilot">GitHub Copilot</option>
-            <option value="gemini">Gemini CLI</option>
-          </select>
         </div>
       </div>
     </div>
@@ -609,12 +560,10 @@
         vi videre med mer retning, bedre kontekst, skills og verktøy.</div>
 
       <h3>1) Start i en tom mappe</h3>
-      <p>Ikke bruk et eksisterende prosjekt. Lag en ny, tom mappe og åpne <span class="ho claude">Claude Code</span><span class="ho copilot">Copilot</span><span class="ho gemini">Gemini CLI</span> der.</p>
-      <p class="ho claude">Du kan enten koble mappen til i Desktop-appen, eller kjøre dette i terminalen:</p>
-      <p class="ho copilot">Kjør dette i terminalen i den nye mappa:</p>
-      <p class="ho gemini">Kjør dette i terminalen i den nye mappa:</p>
+      <p>Ikke bruk et eksisterende prosjekt. Lag en ny, tom mappe og åpne Claude Code der.</p>
+      <p>Du kan enten koble mappen til i Desktop-appen, eller kjøre dette i terminalen:</p>
       <pre><code>mkdir bekkvaeret &amp;&amp; cd bekkvaeret
-<span class="ho claude">claude</span><span class="ho copilot">copilot</span><span class="ho gemini">gemini</span></code></pre>
+claude</code></pre>
 
       <h3>2) Lim inn denne prompten, ordrett</h3>
       <p>Ikke legg til, fjern eller presiser noe. Alle skal kjøre nøyaktig samme prompt:</p>
@@ -669,14 +618,14 @@ ferdig, og si ifra først når den er klar til å åpnes."</code></pre>
       <div class="level-head">
         <div class="level-badge">1</div>
         <div>
-          <h2>Bruk <span class="ho claude">Claude Code</span><span class="ho copilot">Copilot</span><span class="ho gemini">Gemini CLI</span> best mulig</h2>
+          <h2>Bruk Claude Code best mulig</h2>
           <p class="sub">Fire vaner som hever kvaliteten</p>
         </div>
       </div>
 
       <div class="goal"><b>Mål:</b> Dere har nok brukt AI-verktøy i prosjektene deres. Her er fire vaner som gjør
         øktene bedre,
-        <span class="ho claude">enten du jobber i Desktop-appen eller i terminalen.</span><span class="ho copilot">uansett hvordan du kjører agenten.</span><span class="ho gemini">uansett hvordan du kjører agenten.</span></div>
+        enten du jobber i Desktop-appen eller i terminalen.</div>
 
       <h3>1) Start store endringer med en plan</h3>
       <p>For alt som er større enn en liten endring: be om en plan før du ber om kode. La agenten lese relevant kode,
@@ -687,7 +636,7 @@ fram en steg-for-steg plan for å gjøre Y: hvilke filer, hvilken
 rekkefølge, og hva som må testes. Vent på at jeg godkjenner planen."</code></pre>
       <p>Mange agentverktøy har en egen <b>planmodus</b>. Bruk den på større oppgaver. Det gir mindre feil, bedre
         retning og færre bortkastede runder.
-        <span class="ho claude">I Claude Code veksler du modus med <kbd>Shift</kbd>+<kbd>Tab</kbd>.</span><span class="ho copilot">I Copilot starter du den med <code>/plan</code> (eller <code>copilot --plan</code>).</span><span class="ho gemini">I Gemini CLI starter du den med <code>/plan</code>, eller sykler modus med <kbd>Shift</kbd>+<kbd>Tab</kbd>.</span></p>
+        I Claude Code veksler du modus med <kbd>Shift</kbd>+<kbd>Tab</kbd>.</p>
 
       <h3>2) Kontekst er alt</h3>
       <p>Kontekst er alt agenten ser akkurat nå:</p>
@@ -711,7 +660,7 @@ rekkefølge, og hva som må testes. Vent på at jeg godkjenner planen."</code></
         <li>Ikke bruk samme økt til mange urelaterte oppgaver.</li>
         <li>Start friskt når du bytter oppgave (<code>/clear</code>).</li>
       </ul>
-      <p>Legg fast prosjektkontekst i <span class="ho claude"><code>CLAUDE.md</code></span><span class="ho copilot"><code>AGENTS.md</code></span><span class="ho gemini"><code>GEMINI.md</code></span>, for eksempel:</p>
+      <p>Legg fast prosjektkontekst i <code>CLAUDE.md</code>, for eksempel:</p>
       <ul>
         <li>stack</li>
         <li>viktige kommandoer</li>
@@ -861,9 +810,9 @@ uv tool install specify-cli --from git+https://github.com/github/spec-kit.git</c
 
       <h3>Hvor skills bor</h3>
       <p>En skill er en mappe med en <code>SKILL.md</code>-fil.</p>
-      <pre><code><span class="ho claude">.claude</span><span class="ho copilot">.github</span><span class="ho gemini">.gemini</span>/skills/&lt;navn&gt;/SKILL.md
-<span class="ho claude">~/.claude</span><span class="ho copilot">~/.copilot</span><span class="ho gemini">~/.gemini</span>/skills/&lt;navn&gt;/SKILL.md</code></pre>
-      <p>Bruk <code><span class="ho claude">.claude/skills</span><span class="ho copilot">.github/skills</span><span class="ho gemini">.gemini/skills</span></code> når skillen skal deles med prosjektet.</p>
+      <pre><code>.claude/skills/&lt;navn&gt;/SKILL.md
+~/.claude/skills/&lt;navn&gt;/SKILL.md</code></pre>
+      <p>Bruk <code>.claude/skills</code> når skillen skal deles med prosjektet.</p>
       <p>Agenten leser først bare <code>description</code>. Resten av skillen lastes først når oppgaven matcher. Derfor
         er en presis <code>description</code> det viktigste du skriver.</p>
 
@@ -888,10 +837,10 @@ uv tool install specify-cli --from git+https://github.com/github/spec-kit.git</c
 
       <h3>1) Lås teknologivalgene i en instruksjonsfil</h3>
       <p>Husk hvor sprikende «Før vi begynner» ble: ingen hadde fortalt agenten hva slags app Bekkværet skulle være.
-        Før vi bygger videre, fester vi valgene i en <span class="ho claude"><code>CLAUDE.md</code></span><span class="ho copilot"><code>AGENTS.md</code></span><span class="ho gemini"><code>GEMINI.md</code></span>, den alltid-lastede konteksten fra tabellen
+        Før vi bygger videre, fester vi valgene i en <code>CLAUDE.md</code>, den alltid-lastede konteksten fra tabellen
         over. Da slutter agenten å finne opp stacken på nytt for hver økt.</p>
       <p>Bestem deg for en stack, det er din beslutning, og be agenten skrive den ned:</p>
-      <pre><code>"Lag en <span class="ho claude">CLAUDE.md</span><span class="ho copilot">AGENTS.md</span><span class="ho gemini">GEMINI.md</span> i rota for Bekkværet. Skriv ned hvilken stack vi
+      <pre><code>"Lag en CLAUDE.md i rota for Bekkværet. Skriv ned hvilken stack vi
 bruker, hvordan prosjektet kjøres og testes, mappestrukturen, og
 et par regler du skal følge. Hold det kort."</code></pre>
       <p>Et eksempel på hva fila kan inneholde:</p>
@@ -918,7 +867,7 @@ et par regler du skal følge. Hold det kort."</code></pre>
         steg, fordi de bare er relevante når agenten jobber med værdata.</p>
       <p>Test at den virker: start en ny økt og spør <em>«hvilken stack bruker dette prosjektet?»</em> og
         <em>«hva skal Oslo og Trondheim kalles?»</em>. Agenten skal svare fra
-        <span class="ho claude"><code>CLAUDE.md</code></span><span class="ho copilot"><code>AGENTS.md</code></span><span class="ho gemini"><code>GEMINI.md</code></span> uten at du forklarer noe.</p>
+        <code>CLAUDE.md</code> uten at du forklarer noe.</p>
 
       <h3>2) Finn og installer skills</h3>
       <p><span class="pill">skills.sh</span> <a href="https://skills.sh">skills.sh</a> er en markedsplass for skills.
@@ -948,7 +897,7 @@ et par regler du skal følge. Hold det kort."</code></pre>
               som desimalskilletegn</li>
           </ul>
         </li>
-        <li><b>Lag skillen.</b> Be agenten skrive den til <code><span class="ho claude">.claude</span><span class="ho copilot">.github</span><span class="ho gemini">.gemini</span>/skills/bekkvaer-enheter/SKILL.md</code> med en
+        <li><b>Lag skillen.</b> Be agenten skrive den til <code>.claude/skills/bekkvaer-enheter/SKILL.md</code> med en
           presis <code>description</code> så den lastes automatisk når noen jobber med værdata:
           <pre><code>---
 name: bekkvaer-enheter
@@ -997,7 +946,7 @@ Enheter og format for all værdata i Bekkværet:
       </div>
 
       <div class="callout warn"><span class="t">Hvis <code>npx skills add</code> feiler</span>
-        Du trenger strengt tatt ikke grill-me. Lag <code><span class="ho claude">.claude</span><span class="ho copilot">.github</span><span class="ho gemini">.gemini</span>/skills/bekkvaer-enheter/SKILL.md</code> for hånd med
+        Du trenger strengt tatt ikke grill-me. Lag <code>.claude/skills/bekkvaer-enheter/SKILL.md</code> for hånd med
         reglene over, og be agenten lese gjennom og foreslå grensetilfeller du har glemt.
       </div>
 
@@ -1005,7 +954,7 @@ Enheter og format for all værdata i Bekkværet:
       <h3>Oppsummert</h3>
       <p>Instruksjonsfiler og skills løser to ulike problemer:</p>
       <ul>
-        <li><b>Instruksjonsfilen</b> (<span class="ho claude"><code>CLAUDE.md</code></span><span class="ho copilot"><code>AGENTS.md</code></span><span class="ho gemini"><code>GEMINI.md</code></span>) sier: «dette gjelder alltid i prosjektet.»</li>
+        <li><b>Instruksjonsfilen</b> (<code>CLAUDE.md</code>) sier: «dette gjelder alltid i prosjektet.»</li>
         <li><b>Skills</b> sier: «dette gjelder når du jobber med denne typen oppgave.»</li>
       </ul>
       <p>For Bekkværet betyr det:</p>
@@ -1049,42 +998,15 @@ Enheter og format for all værdata i Bekkværet:
         gjennom agentens vanlige godkjenninger.</p>
 
       <h3>Hvordan koble på en MCP-server</h3>
-      <p>Hver agent har sin egen måte å legge til MCP-servere på.
-        <span class="ho claude">I Claude Code kan du bruke disse kommandoene:</span>
-        <span class="ho copilot">I Copilot kan du legge til servere interaktivt eller via config:</span>
-        <span class="ho gemini">I Gemini CLI kan du bruke disse kommandoene:</span></p>
-      <div class="ho claude"><pre><code>claude mcp add &lt;navn&gt; -- &lt;kommando som starter serveren&gt;</code></pre>
+      <p>Du legger til MCP-servere med disse kommandoene i Claude Code:</p>
+      <pre><code>claude mcp add &lt;navn&gt; -- &lt;kommando som starter serveren&gt;</code></pre>
       <p>For en remote MCP-server:</p>
       <pre><code>claude mcp add --transport http &lt;navn&gt; &lt;url&gt;</code></pre>
       <p>Se hva som er koblet på:</p>
       <pre><code>claude mcp list</code></pre>
       <p>Inne i Claude Code kan du også bruke:</p>
       <pre><code>/mcp</code></pre>
-      <p>Da ser du status og hvilke verktøy MCP-serveren tilbyr.</p></div>
-      <div class="ho copilot"><pre><code>copilot mcp add &lt;navn&gt; -- &lt;kommando som starter serveren&gt;</code></pre>
-      <p>For en remote MCP-server legger du den i <code>~/.copilot/mcp-config.json</code>:</p>
-      <pre><code>{
-  "mcpServers": {
-    "&lt;navn&gt;": {
-      "type": "http",
-      "url": "&lt;url&gt;",
-      "tools": ["*"]
-    }
-  }
-}</code></pre>
-      <p>Se hva som er koblet på:</p>
-      <pre><code>copilot mcp show</code></pre>
-      <p>Inne i Copilot kan du også bruke:</p>
-      <pre><code>/mcp</code></pre>
-      <p>Da ser du status og hvilke verktøy MCP-serveren tilbyr.</p></div>
-      <div class="ho gemini"><pre><code>gemini mcp add &lt;navn&gt; &lt;kommando som starter serveren&gt;</code></pre>
-      <p>For en remote MCP-server:</p>
-      <pre><code>gemini mcp add --transport http &lt;navn&gt; &lt;url&gt;</code></pre>
-      <p>Se hva som er koblet på:</p>
-      <pre><code>gemini mcp list</code></pre>
-      <p>Inne i Gemini CLI kan du også bruke:</p>
-      <pre><code>/mcp</code></pre>
-      <p>Da ser du status og hvilke verktøy MCP-serveren tilbyr.</p></div>
+      <p>Da ser du status og hvilke verktøy MCP-serveren tilbyr.</p>
 
       <h3>Et hav av servere</h3>
       <p>Det finnes mange MCP-servere. Mange verktøy du bruker i utviklerhverdagen har allerede en MCP-integrasjon.</p>
@@ -1111,20 +1033,8 @@ Enheter og format for all værdata i Bekkværet:
 
       <h3>1. Koble på Figma</h3>
       <p>Kjør:</p>
-      <div class="ho claude"><pre><code>claude mcp add --transport http figma https://mcp.figma.com/mcp</code></pre></div>
-      <div class="ho copilot"><p>Legg figma i <code>~/.copilot/mcp-config.json</code>:</p>
-      <pre><code>{
-  "mcpServers": {
-    "figma": {
-      "type": "http",
-      "url": "https://mcp.figma.com/mcp",
-      "tools": ["*"]
-    }
-  }
-}</code></pre>
-      <p>Eller interaktivt: <code>/mcp add</code> → type <b>HTTP</b> → url <code>https://mcp.figma.com/mcp</code></p></div>
-      <div class="ho gemini"><pre><code>gemini mcp add --transport http figma https://mcp.figma.com/mcp</code></pre></div>
-      <p>Start <span class="ho claude">Claude Code</span><span class="ho copilot">Copilot</span><span class="ho gemini">Gemini CLI</span> og kjør:</p>
+      <pre><code>claude mcp add --transport http figma https://mcp.figma.com/mcp</code></pre>
+      <p>Start Claude Code og kjør:</p>
       <pre><code>/mcp</code></pre>
       <p>Fullfør innloggingen i nettleseren hvis du blir bedt om det.</p>
 
@@ -1322,8 +1232,6 @@ ta en avgjørelse."</code></pre>
     <footer>
       <p><b>Lenker.</b>
         Claude Code: <a href="https://claude.com/product/claude-code">claude.com/product/claude-code</a> ·
-        Copilot CLI: <a href="https://docs.github.com/en/copilot/how-tos/copilot-cli">docs.github.com</a> ·
-        Gemini CLI: <a href="https://geminicli.com/docs/">geminicli.com</a> ·
         Skills: <a href="https://skills.sh">skills.sh</a> ·
         MCP-servere: <a href="https://github.com/modelcontextprotocol/servers">modelcontextprotocol/servers</a> ·
         openclaw: <a href="https://docs.openclaw.ai">docs.openclaw.ai</a>
@@ -1358,18 +1266,6 @@ ta en avgjørelse."</code></pre>
       } catch (e) { }
       if (!document.querySelector('section.level[data-level="' + savedL + '"]')) savedL = '0';
       setLevel(savedL);
-
-      // Harness-velger
-      var harnessSel = document.getElementById('harnessSel');
-      function setHarness(h) {
-        document.body.setAttribute('data-harness', h);
-        if (harnessSel) harnessSel.value = h;
-        try { localStorage.setItem('ws_harness', h); } catch (e) { }
-      }
-      if (harnessSel) harnessSel.addEventListener('change', function () { setHarness(harnessSel.value); });
-      var savedH = 'claude';
-      try { savedH = localStorage.getItem('ws_harness') || 'claude'; } catch (e) { }
-      setHarness(savedH);
 
       // Kopier-til-utklippstavle i alle kodefelt
       [].forEach.call(document.querySelectorAll('pre'), function (pre) {
