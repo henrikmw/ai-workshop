@@ -559,13 +559,25 @@
         <b>Bekkværet</b> i sin enkleste form, og nullpunktet vi sammenligner resten av workshopen med. Senere bygger
         vi videre med mer retning, bedre kontekst, skills og verktøy.</div>
 
-      <h3>1) Start i en tom mappe</h3>
-      <p>Ikke bruk et eksisterende prosjekt. Lag en ny, tom mappe og åpne Claude Code der.</p>
-      <p>Du kan enten koble mappen til i Desktop-appen, eller kjøre dette i terminalen:</p>
+      <h3>1) Sett opp API-nøkkelen</h3>
+      <p>Du har fått utdelt en delt API-nøkkel fra kursholder (delt i kurskanalen, ikke her på siden). Sett den som
+        miljøvariabel i terminalen <b>før</b> du starter Claude Code:</p>
+      <pre><code>export ANTHROPIC_API_KEY=nøkkelen-du-fikk-utdelt</code></pre>
+      <p>Kjør <code>claude</code>. Første gang spør den om du vil bruke denne miljøvariabelen for innlogging — godkjenn det.</p>
+      <p>Test at den virker: skriv <code>/status</code> inne i Claude Code og sjekk at nøkkelen/kontoen vises under
+        <b>Login method</b>. Prøv deretter en enkel prompt, for eksempel <code>hei</code>, for å bekrefte at den svarer.</p>
+      <div class="callout warn"><span class="t">Bruker du Desktop-appen?</span>
+        Den støtter kun innlogging med claude.ai-konto, ikke API-nøkler. Skal du bruke den delte nøkkelen, må du bruke
+        terminalen.
+      </div>
+
+      <h3>2) Start i en tom mappe</h3>
+      <p>Ikke bruk et eksisterende prosjekt. Lag en ny, tom mappe og åpne Claude Code <b>i terminalen</b> der (ikke
+        Desktop-appen, som ikke støtter den delte nøkkelen fra forrige steg):</p>
       <pre><code>mkdir bekkvaeret &amp;&amp; cd bekkvaeret
 claude</code></pre>
 
-      <h3>2) Lim inn denne prompten, ordrett</h3>
+      <h3>3) Lim inn denne prompten, ordrett</h3>
       <p>Ikke legg til, fjern eller presiser noe. Alle skal kjøre nøyaktig samme prompt:</p>
       <pre><code>"Lag en værmeldingstjeneste som heter Bekkværet. Den skal vise:
 - nåværende vær (temperatur og forhold)
@@ -578,11 +590,11 @@ Ikke bruk skills eller andre instruksjonsfiler.
 Ikke spør meg om noe som helst underveis. Bygg den helt
 ferdig, og si ifra først når den er klar til å åpnes."</code></pre>
 
-      <h3>3) La AI-en jobbe ferdig</h3>
+      <h3>4) La AI-en jobbe ferdig</h3>
       <p>Ikke avbryt, styr eller gi ekstra føringer underveis. Godkjenn det den trenger for å komme videre, men la den
         ta alle faglige valg selv. Poenget er å se hva den lager helt uten hjelp.</p>
 
-      <h3>4) Åpne resultatet og sammenlign</h3>
+      <h3>5) Åpne resultatet og sammenlign</h3>
       <p>Når AI-en er ferdig, åpner du siden i nettleseren. Sammenlign med dem rundt deg:</p>
       <ul>
         <li>Hvilken stack valgte den?
@@ -624,8 +636,7 @@ ferdig, og si ifra først når den er klar til å åpnes."</code></pre>
       </div>
 
       <div class="goal"><b>Mål:</b> Dere har nok brukt AI-verktøy i prosjektene deres. Her er fire vaner som gjør
-        øktene bedre,
-        enten du jobber i Desktop-appen eller i terminalen.</div>
+        øktene bedre i Claude Code.</div>
 
       <h3>1) Start store endringer med en plan</h3>
       <p>For alt som er større enn en liten endring: be om en plan før du ber om kode. La agenten lese relevant kode,
